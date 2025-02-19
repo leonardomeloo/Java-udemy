@@ -1,6 +1,6 @@
 package Entities;
 
-import java.sql.Date;
+import java.util.Date;
 
 public class HourContract {
   private Date date;
