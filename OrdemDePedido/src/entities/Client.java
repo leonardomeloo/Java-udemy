@@ -1,21 +1,24 @@
 package entities;
-
-import java.sql.Date;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 
 public class Client {
   private String name;
   private String email;
-  private Date birthDate;
+  private LocalDate birthDate;
   
+  private static  DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+
   public Client() {
   }
 
-  public Client(String name, String email, Date birthDate) {
+  public Client(String name, String email, LocalDate birthDate) {
     this.name = name;
     this.email = email;
     this.birthDate = birthDate;
   }
 
+  
   public String getName() {
     return name;
   }
@@ -32,13 +35,23 @@ public class Client {
     this.email = email;
   }
 
-  public Date getBirthDate() {
+  public LocalDate getBirthDate() {
     return birthDate;
   }
 
-  public void setBirthDate(Date birthDate) {
+  public void setBirthDate(LocalDate birthDate) {
     this.birthDate = birthDate;
   }
 
-  
+  public String toString(){
+    return "Client: "
+            + getName()
+            + " ("
+            + birthDate.format(formatter)
+            +") - "
+            + getEmail();
+  }
+  public static LocalDate parseDate(String dateString) {
+    return LocalDate.parse(dateString, formatter);
+}
 }
