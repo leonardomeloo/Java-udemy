@@ -1,6 +1,4 @@
-import java.sql.Date;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 import java.util.Scanner;
 import entities.Client;
@@ -9,12 +7,10 @@ import entities.OrderItem;
 import entities.Product;
 import entities.enums.OrderStatus;
 
-
 public class App {
     public static void main(String[] args) throws Exception {
         Locale.setDefault(Locale.US);
         Scanner sc = new Scanner(System.in);
-        
 
         System.out.println("Enter client data: ");
         System.out.println("Name: ");
@@ -54,7 +50,7 @@ public class App {
 
         System.out.println(order);
 
-
-
+        sc.close();
+        
     }
 }
