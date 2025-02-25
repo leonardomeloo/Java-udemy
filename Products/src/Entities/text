@@ -1,0 +1,11 @@
+Product product = new Product("TV", 1000.00);
+
+        ImportedProduct imp = new ImportedProduct("PC", 2000.00, 300.00);
+
+        UsedProduct use = new UsedProduct("DVD",  200.00, LocalDate.of(2022, 5, 10));
+
+        System.out.println(product.priceTag());
+        System.out.println(imp.priceTag());
+        System.out.println(use.priceTag());
+        
+        sc.close();
